@@ -1,0 +1,6 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1746225933
+car.tscn::PackedScene::3609747772852422358::1746225917::0::1::::<><><>0<>0<><>::uid://brkmu326g8nn8::::res://carScript.gd
+carScript.gd::GDScript::3601040636652896791::1746225917::0::1::::<>RigidBody3D<><>0<>0<><>::
+icon.svg::CompressedTexture2D::8410690490906171218::1746225917::1746225933::1::::<><><>0<>0<>fe352d38c993d639d8cf307ba539a87c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile::-1::1746224742::0::1::::<><><>0<>0<><>::
