@@ -1,6 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746225933
-car.tscn::PackedScene::3609747772852422358::1746225917::0::1::::<><><>0<>0<><>::uid://brkmu326g8nn8::::res://carScript.gd
-carScript.gd::GDScript::3601040636652896791::1746225917::0::1::::<>RigidBody3D<><>0<>0<><>::
-icon.svg::CompressedTexture2D::8410690490906171218::1746225917::1746225933::1::::<><><>0<>0<>fe352d38c993d639d8cf307ba539a87c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1746224742::0::1::::<><><>0<>0<><>::
+::res://::1746234440
+car.tscn::PackedScene/PackedScene::3609747772852422358::1746225917::0::1::::<><><>0<>0<><>::uid://brkmu326g8nn8::::res://carScript.gd
+carScript.gd::GDScript/GDScript::3601040636652896791::1746225917::0::1::::<>RigidBody3D<><>0<>0<><>::
+cupri.tscn::PackedScene::3122571558513257616::1746234422::0::1::::<><><>0<>0<><>::uid://c7g8155ih5ioo::::res://tips.gd
+encouragement.gd::GDScript::554947712149736188::1746234413::0::1::::<>Control<><>0<>0<><>::
+environment.gd::GDScript::2549079847382545029::1746234380::0::1::::GEMINI<>RefCounted<><>0<>0<><>::
+icon.svg::CompressedTexture2D/CompressedTexture2D::8410690490906171218::1746225917::1746225933::1::::<><><>0<>0<>fe352d38c993d639d8cf307ba539a87c<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+README.md::TextFile/TextFile::-1::1746228666::0::1::::<><><>0<>0<><>::
+response.json::JSON/JSON::-1::1746232884::0::1::::<><><>0<>0<><>::
+tips.gd::GDScript::7033322344149081066::1746234413::0::1::::<>Control<><>0<>0<><>::
+::res://Resources/::1746231647

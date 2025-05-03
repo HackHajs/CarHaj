@@ -1,0 +1,28 @@
+# Check for FreeBSD base64 and set flags accordingly
+if [[ "$(base64 --version 2>&1)" = *"FreeBSD"* ]]; then
+  B64FLAGS="--input"
+else
+  B64FLAGS="-w0"
+fi
+
+# Base64 encode the PDF
+ENCODED_PDF=$(base64 $B64FLAGS "Resources/Cupra_manual.pdf")
+
+# Generate content using the base64 encoded PDF
+curl --verbose "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDIRDRnilY6Ma8WDzFOZmgZ5ni3THd99wY" \
+    -H 'Content-Type: application/json' \
+    -X POST \
+    -d '{
+      "contents": [{
+        "parts":[
+          {"inline_data": {"mime_type": "application/pdf", "data": "'"$ENCODED_PDF"'"}},
+          {"text": "Learn this"}
+        ]
+      }]
+    }' 2> /dev/null > response.json
+
+cat response.json
+echo
+
+jq ".candidates[].content.parts[].text" response.json
+
