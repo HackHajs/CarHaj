@@ -14,3 +14,14 @@
 | Make models                                                | Slushee         |  [ ]   |
 | Godot stuff                                                | Fay (& Slushee) |  [ ]   |
 | Gemini integration (Tips + Success/encouragement messages) | Emma            |  [ ]   |
+
+## QTEs spec
+
+4 lines:
+
+ - <x (- left) y z (- forward) size>
+ - option1,option2
+ - \<correct option 0 indexed>
+ - \<timeeout (secs)>
+
+
