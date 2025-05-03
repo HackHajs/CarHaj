@@ -1,4 +1,5 @@
-extends Control
+extends HTTPRequest
+class_name AI
 
 func make_joke():
 	var json = '{
@@ -9,9 +10,9 @@ func make_joke():
 	  }]
 	}'
 	var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=%s" %GEMINI.API_KEY
-	$HTTPRequest.request_completed.connect(_on_request_completed)
+	request_completed.connect(_on_request_completed)
 	var headers = ["Content-Type: application/json"]
-	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
+	request(url, headers, HTTPClient.METHOD_POST, json)
 
 func make_encouragement():
 	var json = '{
@@ -22,10 +23,10 @@ func make_encouragement():
 	  }]
 	}'
 	var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=%s" %GEMINI.API_KEY
-	$HTTPRequest.request_completed.connect(_on_request_completed)
+	request_completed.connect(_on_request_completed)
 	var headers = ["Content-Type: application/json"]
-	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
+	request(url, headers, HTTPClient.METHOD_POST, json)
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
-	print(json["candidates"][0]["content"]["parts"][0]["text"])
+	get_parent().say(json["candidates"][0]["content"]["parts"][0]["text"])
