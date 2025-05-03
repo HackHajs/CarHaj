@@ -38,7 +38,8 @@ func _process(delta):
 func lookat(pos, size):
 	active = false
 	var target = Vector3(0, 0, 0)
-	target.y = PI - atan2(pos.x, pos.z)
+	target.y = atan2(pos.x, pos.z)
+	target.y += PI if target.y < 0 else -PI
 	target.x = atan2(pos.y, (pos.x**2 + pos.z**2)**.5)
 	var fov = atan(.5*size/pos.length()) / PI * 180
 	

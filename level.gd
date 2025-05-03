@@ -9,7 +9,7 @@ extends Node3D
 @onready var Cupri = $Cupri
 var qtes: Array
 var moving = false
-
+var currentIcon = null
 
 func _ready():
 	qtes = Array(FileAccess.open("res://Resources/QTES.txt", FileAccess.READ).get_as_text().split("\n"))
@@ -33,14 +33,13 @@ func _process(delta):
 func getQ():
 	if qtes.size() < 4: return null
 	var cam: PackedStringArray = qtes[0].split(" ")
-	var target = Vector3(cam[0].to_float(), cam[1].to_float(), cam[2].to_float())
-	var zoom = cam[3].to_float()
+	var target = get_node(qtes[0])
 	
 	var opts = qtes[1].split("|")
 	var idx = qtes[2].to_int()
 	var time = qtes[3].to_float()
 	qtes = qtes.slice(4)
-	return [target, zoom, opts, idx, time]
+	return [target, opts, idx, time]
 
 func nextQTE():
 	var data = getQ()
@@ -48,11 +47,13 @@ func nextQTE():
 		Cupri.leave()
 		return
 	
-	Player.lookat(data[0], data[1])
+	data[0].show()
+	Player.lookat(data[0].position, 2)
 	#optional question from cupri
-	for i in data[2].size():
-		QTE.addOption(data[2][i], i == data[3])
-	QTE.start(data[4])
+	for i in data[1].size():
+		QTE.addOption(data[1][i], i == data[2])
+	QTE.start(data[3])
+	currentIcon = data[0]
 
 func result(correct):
 	Player.returnControl()
@@ -61,5 +62,6 @@ func result(correct):
 		#Cupri.say("You idiot.")
 		Cupri.make_funOf()
 	else:
+		currentIcon.hide()
 		#Cupri.say("wow.... congrats on this simple question")
 		Cupri.make_congrat()
