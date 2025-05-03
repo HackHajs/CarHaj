@@ -17,4 +17,5 @@ func make_joke():
 
 func _on_request_completed(result, response_code, headers, body):
 	var json = JSON.parse_string(body.get_string_from_utf8())
+	print(json)
 	get_parent().say(json["candidates"][0]["content"]["parts"][0]["text"])
