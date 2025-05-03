@@ -7,6 +7,10 @@ script = ExtResource("1_xhfnw")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+target_position = Vector3(0, 0, -10)
+debug_shape_thickness = 5
+
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 text = "Imagine theres a dashboard here
