@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://0vkkidwls7cc"]
+[gd_scene load_steps=10 format=3 uid="uid://0vkkidwls7cc"]
 
 [ext_resource type="VideoStream" uid="uid://b1mpkcdyc8tbg" path="res://Resources/Video stuff/Intro.ogv" id="1_06t4h"]
 [ext_resource type="PackedScene" uid="uid://dlqx0yh8d6yhh" path="res://howdoI.tscn" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://c5g8xxx5co46g" path="res://Resources/Main_menu.png" id="2_7vrkn"]
 [ext_resource type="Script" uid="uid://bmsivey8wo4y1" path="res://fadein.gd" id="3_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://ccklk028lmvtd" path="res://Resources/Main_menu1.png" id="3_opfnp"]
+[ext_resource type="Texture2D" uid="uid://4x78ncjx806d" path="res://Resources/Main_menu2.png" id="4_cp0ys"]
+[ext_resource type="Script" uid="uid://bfiy30dyvjn0n" path="res://Scripts/changeScene.gd" id="4_yhxw7"]
+[ext_resource type="PackedScene" uid="uid://yxe1ndv38mxh" path="res://Scenes/Level.tscn" id="5_trj04"]
+[ext_resource type="Texture2D" uid="uid://dffsatug1rp8f" path="res://Resources/Main_menu3.png" id="5_yhxw7"]
 
 [node name="Background" type="Control"]
 layout_mode = 3
@@ -13,37 +18,91 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Play game" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 737.0
-offset_top = 151.0
-offset_right = 1067.0
-offset_bottom = 252.0
-
-[node name="How do I?" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 737.0
-offset_top = 267.0
-offset_right = 1067.0
-offset_bottom = 365.0
-
-[node name="Control" parent="How do I?" instance=ExtResource("1_jix8l")]
-layout_mode = 1
-
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.6, 0.6)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 stream = ExtResource("1_06t4h")
 autoplay = true
+expand = true
 loop = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
-modulate = Color(1, 1, 1, 0)
+[node name="Fadein" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_fu7sn")
+
+[node name="TextureRect" type="TextureRect" parent="Fadein"]
+clip_contents = true
 layout_mode = 0
-offset_right = 1920.0
+offset_right = 960.0
 offset_bottom = 1080.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_7vrkn")
-script = ExtResource("3_fu7sn")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="Buttons" type="Control" parent="Fadein"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="TextureButton" type="TextureButton" parent="Fadein/Buttons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -650.0
+offset_top = -350.0
+offset_right = -24.0
+offset_bottom = -104.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("3_opfnp")
+script = ExtResource("4_yhxw7")
+scene = ExtResource("5_trj04")
+
+[node name="TextureButton2" type="TextureButton" parent="Fadein/Buttons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -661.0
+offset_top = -123.5
+offset_bottom = 123.5
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("4_cp0ys")
+script = ExtResource("4_yhxw7")
+scene = ExtResource("1_jix8l")
+
+[node name="TextureButton3" type="TextureButton" parent="Fadein/Buttons"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -658.0
+offset_top = 75.0
+offset_bottom = 372.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("5_yhxw7")

@@ -23,11 +23,12 @@ func _input(event):
 		cam.rotation.x = clamp(cam.rotation.x, -PI/10, PI/40)
 		cam.rotation.y -= event.relative.x * SENS
 		cam.rotation.y = clamp(cam.rotation.y, -PI/12, PI/4)
-		steerHL.visible = Ray.get_collider() == steerCollider and active
+		steerHL.visible = Ray.get_collider() == steerCollider and not get_parent().moving
 		
-	elif event is InputEventMouseButton and active and event.pressed:
+	elif event is InputEventMouseButton and event.pressed:
 		if Ray.get_collider() == steerCollider:
 			clickedSteer.emit()
+			steerHL.hide()
 		
 func _process(delta):
 	if shake_strength > 0:
