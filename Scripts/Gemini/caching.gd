@@ -32,6 +32,7 @@ func _ready():
   "ttl": "300s"
 }' %data
 	var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=%s" %GEMINI.API_KEY
+	print("Please wait")
 	$HTTPRequest.request_completed.connect(_on_request_completed)
 	var headers = ["Content-Type: application/json"]
 	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
