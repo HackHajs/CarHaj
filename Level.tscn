@@ -35,7 +35,6 @@ offset_bottom = 276.0
 grow_vertical = 2
 
 [node name="TotallyASkyBox" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("SphereMesh_m3clv")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="TotallyASkyBox"]
