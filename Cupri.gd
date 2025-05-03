@@ -39,7 +39,7 @@ func make_funOf():
 	var json = '{
 	  "contents": [{
 		"parts":[
-		  {"text": "Mock a new car owner failing to learn how their Cupra Tavascan car works, in a short one-sentence insult joke. The sentence should be in second person, and around 20 words long."}
+		  {"text": "Encourage a new car owner failing to learn how their Cupra Tavascan car works, in a short sentence. The sentence should be in second person, and around 15 words long."}
 		]
 	  }]
 	}'
@@ -53,7 +53,7 @@ func make_congrat():
 	var json = '{
 	  "contents": [{
 		"parts":[
-		  {"text": "Congratulate a new car owner on learning a new function on their Cupra Tavascan car works, in a short one-sentence joke. The sentence should be in second person, and around 20 words long."}
+		  {"text": "Congratulate a new car owner on learning a new function on their Cupra Tavascan car works, in a short one-sentence positive joke. The sentence should be in second person, and around 15 words long."}
 		]
 	  }]
 	}'
