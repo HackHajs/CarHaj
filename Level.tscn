@@ -1,21 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://yxe1ndv38mxh"]
+[gd_scene load_steps=8 format=3 uid="uid://yxe1ndv38mxh"]
 
 [ext_resource type="PackedScene" uid="uid://blu24jmqxd245" path="res://Player.tscn" id="1_2nifc"]
 [ext_resource type="Script" uid="uid://bgoxseot7otqr" path="res://level.gd" id="1_wkftn"]
 [ext_resource type="PackedScene" uid="uid://cugytfictdbi1" path="res://qte.tscn" id="2_wkftn"]
 [ext_resource type="Texture2D" uid="uid://f3xxlleqj8t4" path="res://Resources/roadbox.png" id="3_q4iis"]
-[ext_resource type="Script" uid="uid://cj40wi30rm7qu" path="res://Scripts/qte.gd" id="4_m3clv"]
 [ext_resource type="PackedScene" uid="uid://dkver5s6sf4wp" path="res://Cupri.tscn" id="5_q4iis"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_m3clv"]
-panorama = ExtResource("3_q4iis")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4iis"]
+albedo_texture = ExtResource("3_q4iis")
 
-[sub_resource type="Sky" id="Sky_mxnmf"]
-sky_material = SubResource("PanoramaSkyMaterial_m3clv")
-
-[sub_resource type="Environment" id="Environment_4eo0i"]
-background_mode = 2
-sky = SubResource("Sky_mxnmf")
+[sub_resource type="SphereMesh" id="SphereMesh_m3clv"]
+material = SubResource("StandardMaterial3D_q4iis")
+flip_faces = true
+radius = 10.0
+height = 20.0
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_wkftn")
@@ -24,10 +22,6 @@ script = ExtResource("1_wkftn")
 
 [node name="QTE" parent="." instance=ExtResource("2_wkftn")]
 visible = false
-script = ExtResource("4_m3clv")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_4eo0i")
 
 [node name="Cupri" parent="." instance=ExtResource("5_q4iis")]
 visible = false
@@ -39,3 +33,10 @@ offset_top = 276.0
 offset_right = -100.0
 offset_bottom = 276.0
 grow_vertical = 2
+
+[node name="TotallyASkyBox" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_m3clv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="TotallyASkyBox"]
+light_energy = 10.0
+omni_range = 20.0
