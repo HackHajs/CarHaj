@@ -4,6 +4,7 @@ func _ready() -> void:
 	text_submitted.connect(question_asked)
 	
 func question_asked(qst: String):
+	print("qst")
 	var json = '{
 	  "contents": [
 		{
