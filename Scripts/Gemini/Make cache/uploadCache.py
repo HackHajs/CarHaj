@@ -1,9 +1,10 @@
+from dotenv import dotenv_values
 from google import genai
 from google.genai import types
 import io
 import httpx
-
-client = genai.Client(api_key="")
+config = dotenv_values(".env")
+client = genai.Client(api_key=config["GEMINI_KEY"])
 
 # Retrieve and upload the PDF using the File API
 doc_io = "./Cupra_manual.pdf"

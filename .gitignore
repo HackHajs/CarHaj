@@ -8,4 +8,4 @@ lib64/*
 environment.gd
 .venv/*
 .venv1/*
-Scripts/Gemini/.env
+Scripts/Gemini/Make cache/.env
