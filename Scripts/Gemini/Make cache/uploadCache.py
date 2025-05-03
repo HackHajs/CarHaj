@@ -15,7 +15,7 @@ document = client.files.upload(
 )
 
 model_name = "models/gemini-1.5-flash-001"
-system_instruction = "You are a car support rep, and you must help users know how to use the Cupra Tavuscan"
+system_instruction = "You are a car support rep, and you must help users know how to use the Cupra Tavuscan. Your answers should not be longer than 50 words, and you should refer the user to a manual page if possible."
 
 # Create a cached content object
 cache = client.caches.create(
