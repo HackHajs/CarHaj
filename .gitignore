@@ -1,5 +1,2 @@
-# Godot 4+ specific ignores
-.godot/
-/android/
-
-environment.gd
+# Created by venv; see https://docs.python.org/3/library/venv.html
+.godot/*

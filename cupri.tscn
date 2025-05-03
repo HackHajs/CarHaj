@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bkqukd0iudh73"]
 
-[ext_resource type="Script" uid="uid://h5254l27i8ii" path="res://encouragement.gd" id="1_n3vyb"]
+[ext_resource type="Script" uid="uid://h5254l27i8ii" path="res://Scripts/Gemini/encouragement.gd" id="1_n3vyb"]
 
 [node name="Cupri" type="Control"]
 layout_mode = 3
