@@ -3,11 +3,16 @@ extends Node3D
 const SENS = .003
 const SHAKE_DECAY = 3
 
+signal clickedSteer
+
 var shake_strength = 0
 var active: bool = true
 @onready var cam = $Camera3D
 @onready var Ray = $Camera3D/RayCast3D
 @onready var rng = RandomNumberGenerator.new()
+
+@export var steerCollider: StaticBody3D
+@export var steerHL: MeshInstance3D
 
 func _ready():
 	Input.mouse_mode = Input.MouseMode.MOUSE_MODE_CAPTURED
@@ -15,13 +20,15 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion and active:
 		cam.rotation.x -= event.relative.y * SENS
-		cam.rotation.x = clamp(cam.rotation.x, -PI/4, PI/4)
+		cam.rotation.x = clamp(cam.rotation.x, -PI/10, PI/40)
 		cam.rotation.y -= event.relative.x * SENS
+		cam.rotation.y = clamp(cam.rotation.y, -PI/12, PI/4)
+		steerHL.visible = Ray.get_collider() == steerCollider and active
 		
 	elif event is InputEventMouseButton and active and event.pressed:
-		var obj = Ray.get_collider()
-		print(obj)
-
+		if Ray.get_collider() == steerCollider:
+			clickedSteer.emit()
+		
 func _process(delta):
 	if shake_strength > 0:
 		shake_strength = lerp(shake_strength, 0.0, SHAKE_DECAY * delta)
@@ -43,7 +50,7 @@ func lookat(pos, size):
 func returnControl():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var tween = get_tree().create_tween()
-	tween.tween_property(cam, "fov", 75, .3).set_trans(Tween.TRANS_EXPO)
+	tween.tween_property(cam, "fov", 55, .3).set_trans(Tween.TRANS_EXPO)
 	await tween.finished
 	active = true
 

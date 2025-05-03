@@ -35,6 +35,3 @@
  - a. Skill issue: stop trying to drift
  - b. Slippy terrain ahead
  - c\*. ESC (Electronic Stability Control) off
-
-
-

@@ -23,5 +23,3 @@
  - option1,option2
  - \<correct option 0 indexed>
  - \<timeeout (secs)>
-
-
