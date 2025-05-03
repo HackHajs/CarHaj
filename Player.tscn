@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blu24jmqxd245"]
 
-[ext_resource type="Script" uid="uid://ciehsrxy52cb8" path="res://CamControl.gd" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://dlmjcsnbmyfn" path="res://Scripts/CamControl.gd" id="1_xhfnw"]
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_xhfnw")
@@ -9,4 +9,6 @@ script = ExtResource("1_xhfnw")
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-text = "JKHKJSDHFKJHK"
+text = "Imagine theres a dashboard here
+Like, a steering wheel.
+and a speedometer."

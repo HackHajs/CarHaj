@@ -1,24 +1,27 @@
 extends Node3D
 
-const sens = .003
+const SENS = .003
+const SHAKE_DECAY = 3
 
+var shake_strength = 0
 var active: bool = true
 @onready var cam = $Camera3D
+@onready var rng = RandomNumberGenerator.new()
 
 func _ready():
 	Input.mouse_mode = Input.MouseMode.MOUSE_MODE_CAPTURED
 
 func _input(event):
 	if event is InputEventMouseMotion and active:
-		cam.rotation.x -= event.relative.y * sens
+		cam.rotation.x -= event.relative.y * SENS
 		cam.rotation.x = clamp(cam.rotation.x, -PI/4, PI/4)
-		cam.rotation.y -= event.relative.x * sens
-		
-	#temp
-	elif event is InputEventMouseButton and event.pressed:
-		if active: lookat(Vector3(.125, 0, -1), .5)
-		else: returnControl()
-	#temp
+		cam.rotation.y -= event.relative.x * SENS
+
+func _process(delta):
+	if shake_strength > 0:
+		shake_strength = lerp(shake_strength, 0.0, SHAKE_DECAY * delta)
+		cam.h_offset = rng.randf_range(-shake_strength, shake_strength)
+		cam.v_offset = rng.randf_range(-shake_strength, shake_strength)
 
 func lookat(pos, size):
 	active = false
@@ -33,7 +36,11 @@ func lookat(pos, size):
 	await tween.finished
 
 func returnControl():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	var tween = get_tree().create_tween()
 	tween.tween_property(cam, "fov", 75, .3).set_trans(Tween.TRANS_EXPO)
 	await tween.finished
 	active = true
+
+func shake():
+	shake_strength = 3.0

@@ -1,14 +1,10 @@
 extends Control
 class_name QTE
 
+signal answer(result: bool)
+
 func _ready():
 	hide()
-	#temp
-	addOption("wrong answer", false)
-	addOption("correct answer", true)
-	addOption("very wrong", false)
-	start(10)
-	#endtemp
 
 func addOption(text, correct: bool):
 	var c = Button.new()
@@ -24,6 +20,7 @@ func start(time):
 	show()
 
 func _process(delta):
+	if not visible: return
 	$Time.value -= delta
 	if $Time.value <= 0:
 		selectAns(false)
@@ -32,5 +29,4 @@ func selectAns(correct):
 	hide()
 	for i in $Options.get_children():
 		$Options.remove_child(i)
-	#TODO respond to answer
-	print(correct)
+	answer.emit(correct)
