@@ -6,3 +6,4 @@ share/*
 include/*
 lib64/*
 environment.gd
+Scripts/Gemini/Make cache/.env
