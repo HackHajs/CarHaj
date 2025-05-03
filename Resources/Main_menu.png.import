@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct5y3qe3f1uxa"
-path="res://.godot/imported/7. Navi System 15тАЭ тАУ Smartlight function тАУ Incoming call alert.png-303ac7555bd7885861e51a88acad741e.ctex"
+uid="uid://c5g8xxx5co46g"
+path="res://.godot/imported/Main_menu.png-d00c9630bc582fbe717ee40d1684edaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Tavuscan stock images/Infotainment/7. Navi System 15тАЭ тАУ Smartlight function тАУ Incoming call alert.png"
-dest_files=["res://.godot/imported/7. Navi System 15тАЭ тАУ Smartlight function тАУ Incoming call alert.png-303ac7555bd7885861e51a88acad741e.ctex"]
+source_file="res://Resources/Main_menu.png"
+dest_files=["res://.godot/imported/Main_menu.png-d00c9630bc582fbe717ee40d1684edaa.ctex"]
 
 [params]
 
