@@ -34,3 +34,30 @@ func say(msg: String):
 	await get_tree().create_timer(5).timeout
 	$Bubble.hide()
 	done.emit()
+
+func make_funOf():
+	var json = '{
+	  "contents": [{
+		"parts":[
+		  {"text": "Mock a new car owner failing to learn how their Cupra Tavascan car works, in a short one-sentence insult joke. The sentence should be in second person, and around 20 words long."}
+		]
+	  }]
+	}'
+	var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=%s" %GEMINI.API_KEY
+	$HTTPRequest.request_completed.connect($HTTPRequest._on_request_completed)
+	var headers = ["Content-Type: application/json"]
+	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
+	
+	
+func make_congrat():
+	var json = '{
+	  "contents": [{
+		"parts":[
+		  {"text": "Congratulate a new car owner on learning a new function on their Cupra Tavascan car works, in a short one-sentence joke. The sentence should be in second person, and around 20 words long."}
+		]
+	  }]
+	}'
+	var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=%s" %GEMINI.API_KEY
+	$HTTPRequest.request_completed.connect($HTTPRequest._on_request_completed)
+	var headers = ["Content-Type: application/json"]
+	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
