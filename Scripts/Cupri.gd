@@ -34,6 +34,17 @@ func say(msg: String):
 	await get_tree().create_timer(5).timeout
 	$Bubble.hide()
 	done.emit()
+	
+func longsay(msg: String):
+	if not visible:
+		await enter()
+	$Bubble.show()
+	$Bubble/Label.visible_characters = 0
+	$Bubble/Label.text = msg
+	var tween = get_tree().create_tween()
+	tween.tween_property($Bubble/Label, "visible_characters", msg.length(), msg.length() * TYPE_SPEED)
+	await tween.finished
+	done.emit()
 
 func make_funOf():
 	var json = '{
