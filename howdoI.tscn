@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlqx0yh8d6yhh"]
+
+[ext_resource type="Script" uid="uid://cg4uamcy2dhmu" path="res://howdoi.gd" id="1_ddhsd"]
+[ext_resource type="PackedScene" uid="uid://hben4gmja5gx" path="res://Cupri.tscn" id="1_ubtg3"]
+
+[node name="how shall I" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ddhsd")
+
+[node name="Cupri" parent="." instance=ExtResource("1_ubtg3")]
+offset_left = 905.0
+offset_top = 517.0
+offset_right = 905.0
+offset_bottom = 517.0
+scale = Vector2(2.5, 2.5)
