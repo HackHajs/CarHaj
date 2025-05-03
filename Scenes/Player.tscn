@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://blu24jmqxd245"]
 
 [ext_resource type="Script" uid="uid://dlmjcsnbmyfn" path="res://Scripts/CamControl.gd" id="1_xhfnw"]
-[ext_resource type="Texture2D" uid="uid://dcombo8tfuvfm" path="res://Resources/skyboc.jpg" id="2_kpjcp"]
+[ext_resource type="Texture2D" uid="uid://5ylxufujnr3k" path="res://Resources/skyboc.jpg" id="2_kpjcp"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kne1u"]
 panorama = ExtResource("2_kpjcp")
@@ -13,6 +13,8 @@ sky_material = SubResource("PanoramaSkyMaterial_kne1u")
 background_mode = 2
 sky = SubResource("Sky_kpjcp")
 sky_rotation = Vector3(0, 1.22173, 0)
+fog_density = 0.001
+fog_aerial_perspective = 0.183
 
 [node name="Player" type="Node3D"]
 script = ExtResource("1_xhfnw")

@@ -1,14 +1,16 @@
-[gd_scene load_steps=26 format=4 uid="uid://yxe1ndv38mxh"]
+[gd_scene load_steps=32 format=4 uid="uid://yxe1ndv38mxh"]
 
 [ext_resource type="PackedScene" uid="uid://blu24jmqxd245" path="res://Player.tscn" id="1_2nifc"]
 [ext_resource type="Script" uid="uid://bld4sqsird6x4" path="res://level.gd" id="1_wkftn"]
-[ext_resource type="PackedScene" path="res://qte.tscn" id="2_wkftn"]
-[ext_resource type="Texture2D" uid="uid://bq8ar6fbh1kct" path="res://Resources/skyboc.jpg" id="5_mxnmf"]
+[ext_resource type="PackedScene" uid="uid://cugytfictdbi1" path="res://qte.tscn" id="2_wkftn"]
+[ext_resource type="Texture2D" uid="uid://5ylxufujnr3k" path="res://Resources/skyboc.jpg" id="5_mxnmf"]
 [ext_resource type="PackedScene" uid="uid://hben4gmja5gx" path="res://Cupri.tscn" id="5_q4iis"]
 [ext_resource type="PackedScene" uid="uid://ba3npxn2ypj0p" path="res://Resources/Cabin.glb" id="6_m3clv"]
 [ext_resource type="Texture2D" uid="uid://xfejbyb5d5w6" path="res://Resources/asphalt.jpg" id="7_mxnmf"]
 [ext_resource type="Texture2D" uid="uid://bg2a3s0kjgad5" path="res://Resources/drowsiness_monitor_symbol.png" id="8_4eo0i"]
 [ext_resource type="Texture2D" uid="uid://bc8djvypxyufe" path="res://Resources/driver_attention_monitor.png" id="9_86ljf"]
+[ext_resource type="Texture2D" uid="uid://b8u0yvukom053" path="res://Resources/collision_warning_icon.png" id="9_d6u53"]
+[ext_resource type="Texture2D" uid="uid://cybc3s5rxn0s3" path="res://Resources/open_the_window_warning.png" id="9_ofirr"]
 [ext_resource type="Texture2D" uid="uid://btio413m0kens" path="res://Resources/high_voltage_battery_empty.png" id="10_3ywx5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4iis"]
@@ -84,6 +86,22 @@ albedo_texture = ExtResource("8_4eo0i")
 material = SubResource("StandardMaterial3D_86ljf")
 size = Vector2(0.2, 0.2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sypgb"]
+transparency = 1
+albedo_texture = ExtResource("9_d6u53")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dn5x0"]
+material = SubResource("StandardMaterial3D_sypgb")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6u53"]
+transparency = 1
+albedo_texture = ExtResource("9_ofirr")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sypgb"]
+material = SubResource("StandardMaterial3D_d6u53")
+size = Vector2(0.2, 0.2)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ywx5"]
 transparency = 1
 albedo_texture = ExtResource("9_86ljf")
@@ -149,20 +167,25 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, -0.03,
 shape = SubResource("ConcavePolygonShape3D_m3clv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45306, -6.77968, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45306, -7.47447, 0)
 mesh = SubResource("PlaneMesh_86ljf")
 
 [node name="Drowsy" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.999305, -0.03727, 0.000344117, 0, -0.00923269, -0.999957, 0.0372716, 0.999263, -0.00922628, -0.315702, -1.76837, -3.68677)
-visible = false
+transform = Transform3D(0.999305, -0.03727, 0.000344117, 0, -0.00923269, -0.999957, 0.0372716, 0.999263, -0.00922628, -0.180652, -1.79108, -3.68677)
 mesh = SubResource("PlaneMesh_3ywx5")
 
+[node name="Collision" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999305, -0.03727, 0.000344117, 0, -0.00923269, -0.999957, 0.0372716, 0.999263, -0.00922628, 0.108055, -1.79059, -3.68677)
+mesh = SubResource("PlaneMesh_dn5x0")
+
+[node name="Window" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999305, -0.03727, 0.000344117, 0, -0.00923269, -0.999957, 0.0372716, 0.999263, -0.00922628, 0.372641, -1.79928, -3.68677)
+mesh = SubResource("PlaneMesh_sypgb")
+
 [node name="Attention" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.999266, 0.0383164, -0.000353779, 9.28791e-11, -0.00923269, -0.999958, -0.0383181, 0.999223, -0.00922591, 0.463888, -1.79428, -3.62352)
-visible = false
+transform = Transform3D(0.999266, 0.0383164, -0.000353779, 9.28791e-11, -0.00923269, -0.999958, -0.0383181, 0.999223, -0.00922591, 0.631605, -1.79428, -3.62352)
 mesh = SubResource("PlaneMesh_ofirr")
 
 [node name="Battery" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999266, 0.0383164, -0.000353779, 9.28791e-11, -0.00923269, -0.999958, -0.0383181, 0.999223, -0.00922591, -0.554888, -1.79428, -3.62352)
-visible = false
 mesh = SubResource("PlaneMesh_d6u53")
