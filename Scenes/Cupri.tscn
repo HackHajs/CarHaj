@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://hben4gmja5gx"]
 
-[ext_resource type="Script" uid="uid://doq4v110lfcnt" path="res://Cupri.gd" id="1_kwgrg"]
+[ext_resource type="Script" uid="uid://doq4v110lfcnt" path="res://Scripts/Cupri.gd" id="1_kwgrg"]
 [ext_resource type="Texture2D" uid="uid://u427r1wgyopd" path="res://Resources/cupri.svg" id="1_u38vs"]
-[ext_resource type="Texture2D" uid="uid://ctj5gvfkiytfn" path="res://Resources/bubble.png" id="2_htb5f"]
+[ext_resource type="Texture2D" uid="uid://btpec6toruv2l" path="res://Resources/speech_bubble.png" id="3_uw5op"]
 [ext_resource type="Script" uid="uid://h5254l27i8ii" path="res://Scripts/Gemini/on_request_completed.gd" id="4_5iaxr"]
 
 [node name="Cupri" type="Control"]
@@ -27,20 +27,20 @@ texture = ExtResource("1_u38vs")
 expand_mode = 1
 
 [node name="Bubble" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -200.0
+offset_left = -240.0
+offset_top = -356.0
+offset_right = -40.0
+offset_bottom = -20.4531
 grow_horizontal = 0
 grow_vertical = 0
-texture = ExtResource("2_htb5f")
-expand_mode = 1
-flip_h = true
+texture = ExtResource("3_uw5op")
+expand_mode = 5
 
 [node name="Label" type="Label" parent="Bubble"]
 layout_mode = 1
@@ -49,14 +49,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -68.0
-offset_right = 71.0
-offset_bottom = 29.0
+offset_left = -81.0
+offset_top = -147.773
+offset_right = 84.0
+offset_bottom = 109.227
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
