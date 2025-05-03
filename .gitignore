@@ -6,3 +6,5 @@ share/*
 include/*
 lib64/*
 environment.gd
+.venv/*
+.venv1/*
