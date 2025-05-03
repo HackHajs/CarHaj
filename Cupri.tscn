@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://hben4gmja5gx"]
+[gd_scene load_steps=4 format=3 uid="uid://hben4gmja5gx"]
 
 [ext_resource type="Script" uid="uid://doq4v110lfcnt" path="res://Cupri.gd" id="1_kwgrg"]
 [ext_resource type="Texture2D" uid="uid://u427r1wgyopd" path="res://Resources/cupri.svg" id="1_u38vs"]
 [ext_resource type="Texture2D" uid="uid://ctj5gvfkiytfn" path="res://Resources/bubble.png" id="2_htb5f"]
-[ext_resource type="Script" uid="uid://h5254l27i8ii" path="res://Scripts/Gemini/encouragement.gd" id="4_5iaxr"]
 
 [node name="Cupri" type="Control"]
 layout_mode = 3
@@ -58,6 +57,3 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 horizontal_alignment = 1
 autowrap_mode = 3
-
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-script = ExtResource("4_5iaxr")

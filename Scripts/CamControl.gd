@@ -6,6 +6,7 @@ const SHAKE_DECAY = 3
 var shake_strength = 0
 var active: bool = true
 @onready var cam = $Camera3D
+@onready var Ray = $Camera3D/RayCast3D
 @onready var rng = RandomNumberGenerator.new()
 
 func _ready():
@@ -16,6 +17,10 @@ func _input(event):
 		cam.rotation.x -= event.relative.y * SENS
 		cam.rotation.x = clamp(cam.rotation.x, -PI/4, PI/4)
 		cam.rotation.y -= event.relative.x * SENS
+		
+	elif event is InputEventMouseButton and active and event.pressed:
+		var obj = Ray.get_collider()
+		print(obj)
 
 func _process(delta):
 	if shake_strength > 0:
