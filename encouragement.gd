@@ -1,6 +1,19 @@
 extends Control
 
-func _ready():
+func make_joke():
+	var json = '{
+	  "contents": [{
+		"parts":[
+		  {"text": "Make one joke related to the Cupra Tavascan car"}
+		]
+	  }]
+	}'
+	var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=%s" %GEMINI.API_KEY
+	$HTTPRequest.request_completed.connect(_on_request_completed)
+	var headers = ["Content-Type: application/json"]
+	$HTTPRequest.request(url, headers, HTTPClient.METHOD_POST, json)
+
+func make_encouragement():
 	var json = '{
 	  "contents": [{
 		"parts":[

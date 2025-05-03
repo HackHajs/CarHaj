@@ -13,7 +13,6 @@ config_version=5
 config/name="HackUPC2025"
 run/main_scene="res://test.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [input]
 
