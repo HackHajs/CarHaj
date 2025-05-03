@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://0vkkidwls7cc"]
+[gd_scene load_steps=5 format=3 uid="uid://0vkkidwls7cc"]
 
 [ext_resource type="VideoStream" uid="uid://b1mpkcdyc8tbg" path="res://Resources/Video stuff/Intro.ogv" id="1_06t4h"]
+[ext_resource type="PackedScene" uid="uid://dlqx0yh8d6yhh" path="res://howdoI.tscn" id="1_jix8l"]
 [ext_resource type="Texture2D" uid="uid://c5g8xxx5co46g" path="res://Resources/Main_menu.png" id="2_7vrkn"]
 [ext_resource type="Script" uid="uid://bmsivey8wo4y1" path="res://fadein.gd" id="3_fu7sn"]
 
@@ -25,6 +26,9 @@ offset_left = 737.0
 offset_top = 267.0
 offset_right = 1067.0
 offset_bottom = 365.0
+
+[node name="Control" parent="How do I?" instance=ExtResource("1_jix8l")]
+layout_mode = 1
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
