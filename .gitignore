@@ -8,3 +8,4 @@ lib64/*
 environment.gd
 .venv/*
 .venv1/*
+Scripts/Gemini/.env
