@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://yxe1ndv38mxh"]
+[gd_scene load_steps=35 format=4 uid="uid://yxe1ndv38mxh"]
 
 [ext_resource type="PackedScene" uid="uid://blu24jmqxd245" path="res://Scenes/Player.tscn" id="1_2nifc"]
 [ext_resource type="Script" uid="uid://bld4sqsird6x4" path="res://Scripts/level.gd" id="1_wkftn"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bg2a3s0kjgad5" path="res://Resources/drowsiness_monitor_symbol.png" id="8_4eo0i"]
 [ext_resource type="Texture2D" uid="uid://bc8djvypxyufe" path="res://Resources/driver_attention_monitor.png" id="9_86ljf"]
 [ext_resource type="Texture2D" uid="uid://btio413m0kens" path="res://Resources/high_voltage_battery_empty.png" id="10_3ywx5"]
+[ext_resource type="Texture2D" uid="uid://cybc3s5rxn0s3" path="res://Resources/open_the_window_warning.png" id="11_fhlu0"]
+[ext_resource type="Texture2D" uid="uid://b8u0yvukom053" path="res://Resources/collision_warning_icon.png" id="12_bktio"]
+[ext_resource type="Texture2D" uid="uid://uyfppr4rfcyi" path="res://Resources/traction_control_off.png" id="13_nrlyp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4iis"]
 albedo_texture = ExtResource("5_mxnmf")
@@ -100,6 +103,30 @@ albedo_texture = ExtResource("10_3ywx5")
 material = SubResource("StandardMaterial3D_ofirr")
 size = Vector2(0.2, 0.2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44tr1"]
+transparency = 1
+albedo_texture = ExtResource("11_fhlu0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pmxqn"]
+material = SubResource("StandardMaterial3D_44tr1")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gs5q7"]
+transparency = 1
+albedo_texture = ExtResource("12_bktio")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q24aw"]
+material = SubResource("StandardMaterial3D_gs5q7")
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32npc"]
+transparency = 1
+albedo_texture = ExtResource("13_nrlyp")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yyp3s"]
+material = SubResource("StandardMaterial3D_32npc")
+size = Vector2(0.2, 0.2)
+
 [node name="Level" type="Node3D"]
 script = ExtResource("1_wkftn")
 
@@ -153,16 +180,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45306, -6.77968, 0)
 mesh = SubResource("PlaneMesh_86ljf")
 
 [node name="Drowsy" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.999305, -0.03727, 0.000344117, 0, -0.00923269, -0.999957, 0.0372716, 0.999263, -0.00922628, -0.315702, -1.76837, -3.68677)
-visible = false
+transform = Transform3D(0.999305, -0.03727, 0.000344117, 0, -0.00923269, -0.999957, 0.0372716, 0.999263, -0.00922628, -0.394808, -1.78607, -3.68677)
 mesh = SubResource("PlaneMesh_3ywx5")
 
 [node name="Attention" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.999266, 0.0383164, -0.000353779, 9.28791e-11, -0.00923269, -0.999958, -0.0383181, 0.999223, -0.00922591, 0.463888, -1.79428, -3.62352)
-visible = false
 mesh = SubResource("PlaneMesh_ofirr")
 
 [node name="Battery" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.999266, 0.0383164, -0.000353779, 9.28791e-11, -0.00923269, -0.999958, -0.0383181, 0.999223, -0.00922591, -0.554888, -1.79428, -3.62352)
-visible = false
+transform = Transform3D(0.999266, 0.0383164, -0.000353779, 9.28791e-11, -0.00923269, -0.999958, -0.0383181, 0.999223, -0.00922591, -0.625518, -1.77869, -3.62352)
 mesh = SubResource("PlaneMesh_d6u53")
+
+[node name="Window" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999266, 0.0383164, -0.000353779, 9.28791e-11, -0.00923269, -0.999958, -0.0383181, 0.999223, -0.00922591, -0.0334393, -1.78328, -3.62352)
+mesh = SubResource("PlaneMesh_pmxqn")
+
+[node name="Collision" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999266, 0.0383164, -0.000353779, 9.28791e-11, -0.00923269, -0.999958, -0.0383181, 0.999223, -0.00922591, 0.233082, -1.78759, -3.62352)
+mesh = SubResource("PlaneMesh_q24aw")
+
+[node name="Traction" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999266, 0.0383164, -0.000353779, 9.28791e-11, -0.00923269, -0.999958, -0.0383181, 0.999223, -0.00922591, 0.728676, -1.79428, -3.62352)
+mesh = SubResource("PlaneMesh_yyp3s")

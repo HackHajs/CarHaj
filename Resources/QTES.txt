@@ -10,15 +10,15 @@ Battery
 Speed up grandma!|Evil Bowser's turtle ahead: jump on it!!!|Battery drained: literally impossible to drive
 2
 4
-Battery
+Window
 Close the window: it produces drag!|Open the window: CO2 levels high|Do not stick your arm out of the window silly
 1
 5
-Battery
+Collision
 Crash warning!! Stop the vehicle|Michael Bay film ahead|Potential raise to a star car
 0
 2
-Battery
+Traction
 Skill issue: stop trying to drift|Slippy terrain ahead|ESC (Electronic Stability Control) off
 2
 6
