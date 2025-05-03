@@ -8,7 +8,7 @@ signal done
 func leave():
 	$Bubble.hide()
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position.x", -WIDTH, 1).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "position:x", -WIDTH, 1).set_trans(Tween.TRANS_CUBIC)
 	await tween.finished
 	hide()
 
