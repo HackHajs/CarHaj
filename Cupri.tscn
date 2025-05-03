@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkver5s6sf4wp"]
+
+[ext_resource type="Script" uid="uid://du4xu4ikagoro" path="res://Cupri.gd" id="1_kwgrg"]
+[ext_resource type="Texture2D" uid="uid://u427r1wgyopd" path="res://Resources/cupri.svg" id="1_u38vs"]
+[ext_resource type="Texture2D" uid="uid://dhlt8scxrhoxh" path="res://Resources/bubble.png" id="2_htb5f"]
+
+[node name="Cupri" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kwgrg")
+
+[node name="Cupri" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_u38vs")
+expand_mode = 1
+
+[node name="Bubble" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -200.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_htb5f")
+expand_mode = 1
+flip_h = true
+
+[node name="Label" type="Label" parent="Bubble"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -68.0
+offset_right = 71.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+autowrap_mode = 3
