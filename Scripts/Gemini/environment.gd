@@ -1,2 +1,0 @@
-class_name GEMINI
-const API_KEY="AIzaSyCxi987e4WEYQALikV8KwF8usDFp8ur2VA"
