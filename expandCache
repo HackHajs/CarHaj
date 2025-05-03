@@ -1,0 +1,6 @@
+CACHE_NAME=$1
+GEMINI_API_KEY=$2
+
+curl -X PATCH "https://generativelanguage.googleapis.com/v1beta/$CACHE_NAME?key=$GEMINI_API_KEY" \
+ -H 'Content-Type: application/json' \
+ -d '{"ttl": "600s"}'
