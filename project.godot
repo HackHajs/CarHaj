@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HackUPC2025"
-run/main_scene="res://test.tscn"
+run/main_scene="uid://0vkkidwls7cc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [input]

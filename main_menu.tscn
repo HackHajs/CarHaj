@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://0vkkidwls7cc"]
+
+[ext_resource type="Texture2D" uid="uid://dlcgsbxabyg2w" path="res://Resources/Tabascan stock images/Infotainment/2. Navi System 15тАЭ тАУ Music (Full screen).png" id="1_06t4h"]
+
+[node name="Background" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 577.0
+offset_top = 149.0
+offset_right = 1057.0
+offset_bottom = 264.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_06t4h")
