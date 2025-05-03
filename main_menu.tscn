@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://0vkkidwls7cc"]
 
-[ext_resource type="Texture2D" uid="uid://dlcgsbxabyg2w" path="res://Resources/Tabascan stock images/Infotainment/2. Navi System 15тАЭ тАУ Music (Full screen).png" id="1_06t4h"]
+[ext_resource type="VideoStream" uid="uid://b1mpkcdyc8tbg" path="res://Resources/Video stuff/Intro.ogv" id="1_06t4h"]
 
 [node name="Background" type="Control"]
 layout_mode = 3
@@ -17,8 +17,11 @@ offset_top = 149.0
 offset_right = 1057.0
 offset_bottom = 264.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_06t4h")
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_06t4h")
+autoplay = true
+loop = true
