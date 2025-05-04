@@ -1,4 +1,4 @@
-![Carhaj](./Resources/Banner.png)
+![Carhaj](./Resources/Banner.svg)
 
 ## Game
 1. Show a manual page
