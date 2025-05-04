@@ -50,7 +50,7 @@ func make_funOf():
 	var json = '{
 	  "contents": [{
 		"parts":[
-		  {"text": "You are a witty assistant in a hastily developed app, where the user is being introduced to their new Cupra Tavascan. React in one sentence to them getting a quiz question wrong"}
+		  {"text": "You are a witty assistant in a hastily developed app, where the user is being introduced to their new Cupra Tavascan. React in one sentence to them getting a question wrong"}
 		]
 	  }]
 	}'
@@ -64,7 +64,7 @@ func make_congrat():
 	var json = '{
 	  "contents": [{
 		"parts":[
-		  {"text": "You are a witty assistant in a hastily developed app, where the user is being introduced to their new Cupra Tavascan. React in one sentence to them getting a quiz question correct"}
+		  {"text": "You are a witty assistant in a hastily developed app, where the user is being introduced to their new Cupra Tavascan. React in one sentence to them getting a question correct"}
 		]
 	  }]
 	}'

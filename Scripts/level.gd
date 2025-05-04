@@ -13,13 +13,13 @@ var currentIcon = null
 
 func _ready():
 	qtes = Array(FileAccess.open("res://Resources/QTES.txt", FileAccess.READ).get_as_text().split("\n"))
-	Cupri.say("Welcome to your new car! grab the wheel and lets get driving, shall we?")
+	Cupri.longsay("Welcome to your new car! grab the wheel and lets get driving, shall we?")
 	await Player.clickedSteer
 	Player.shake_strength = .1
 	moving = true
 	await get_tree().create_timer(2).timeout
 	await Cupri.say("You do know how to drive this thing right?")
-	await Cupri.say("Like if one of lights comes on you know what to do?")
+	await Cupri.say("Like if one of these lights comes on you know what to do?")
 	
 	QTE.answer.connect(result)
 	Cupri.done.connect(nextQTE)
