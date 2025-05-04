@@ -11,7 +11,7 @@
 | Task                                                       | Who             | Status |
 |------------------------------------------------------------|-----------------|--------|
 | Level design                                               | Arf             |  [ ]   |
-| Make models                                                | Slushee         |  [ ]   |
+| Assets                                                     | Slushee         |  [ ]   |
 | Godot stuff                                                | Fay (& Slushee) |  [ ]   |
 | Gemini integration (Tips + Success/encouragement messages) | Emma            |  [ ]   |
 

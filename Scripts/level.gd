@@ -59,9 +59,7 @@ func result(correct):
 	Player.returnControl()
 	if not correct:
 		Player.shake()
-		#Cupri.say("You idiot.")
 		Cupri.make_funOf()
 	else:
 		currentIcon.hide()
-		#Cupri.say("wow.... congrats on this simple question")
 		Cupri.make_congrat()
