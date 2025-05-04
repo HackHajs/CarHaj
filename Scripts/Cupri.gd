@@ -5,9 +5,9 @@ const WIDTH = 300
 
 signal done
 
-func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.is_pressed():
-		$HTTPRequest.make_joke()
+#func _gui_input(event: InputEvent) -> void:
+#	if event is InputEventMouseButton and event.is_pressed():
+#		$HTTPRequest.make_joke()
 
 func leave():
 	$Bubble.hide()

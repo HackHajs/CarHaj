@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ryjjcevl67a5"]
+
+[ext_resource type="Script" uid="uid://cg4uamcy2dhmu" path="res://howdoi.gd" id="1_ddhsd"]
+[ext_resource type="PackedScene" uid="uid://hben4gmja5gx" path="res://Scenes/Cupri.tscn" id="1_ubtg3"]
+[ext_resource type="Script" uid="uid://qbddgirrrhd4" path="res://question.gd" id="3_ualj2"]
+[ext_resource type="Script" uid="uid://h5254l27i8ii" path="res://Scripts/Gemini/on_request_completed.gd" id="4_ygxc3"]
+
+[node name="how shall I" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ddhsd")
+
+[node name="Cupri" parent="." instance=ExtResource("1_ubtg3")]
+offset_left = 905.0
+offset_top = 517.0
+offset_right = 905.0
+offset_bottom = 517.0
+scale = Vector2(2.5, 2.5)
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 480.0
+offset_right = 449.0
+offset_bottom = 555.0
+scale = Vector2(1.5, 1.5)
+placeholder_text = "Submit your question here!"
+context_menu_enabled = false
+emoji_menu_enabled = false
+script = ExtResource("3_ualj2")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="LineEdit"]
+script = ExtResource("4_ygxc3")

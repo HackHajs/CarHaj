@@ -1,0 +1,13 @@
+curl -X POST "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDz8p_S-pvnFg0BHkC9BAvV9U0J89xgGtU" \
+-H 'Content-Type: application/json' \
+-d '{
+      "contents": [
+        {
+          "parts":[{
+            "text": "What is parking?"
+          }],
+          "role": "user"
+        }
+      ],
+      "cachedContent": "cache name"
+    }' > response.json
