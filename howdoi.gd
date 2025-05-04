@@ -14,7 +14,7 @@ func question_asked(qst: String):
 		  "role": "user"
 		}
 	  ],
-	  "cachedContent": "cachedContents/5s4p8huoj5uk"
+	  "cachedContent": "cachedContents/w5it16fewisu"
 	}' 
 	# cachedContent must be changed manually before compilation, it is the cache name
 	var url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-001:generateContent?key=%s" %GEMINI.API_KEY
