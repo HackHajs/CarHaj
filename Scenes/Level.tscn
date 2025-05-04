@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://btio413m0kens" path="res://Resources/high_voltage_battery_empty.png" id="10_3ywx5"]
 [ext_resource type="Texture2D" uid="uid://cybc3s5rxn0s3" path="res://Resources/open_the_window_warning.png" id="11_fhlu0"]
 [ext_resource type="Texture2D" uid="uid://b8u0yvukom053" path="res://Resources/collision_warning_icon.png" id="12_bktio"]
-[ext_resource type="Texture2D" uid="uid://uyfppr4rfcyi" path="res://Resources/traction_control_off.png" id="13_nrlyp"]
+[ext_resource type="Texture2D" uid="uid://cinm7ussvk04h" path="res://Resources/traction_control_off.png" id="13_nrlyp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q4iis"]
 albedo_texture = ExtResource("5_mxnmf")
@@ -176,7 +176,7 @@ transform = Transform3D(1, 0, 0, 0, -3.57628e-07, -1, 0, 1, -3.57628e-07, -0.03,
 shape = SubResource("ConcavePolygonShape3D_m3clv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45306, -6.77968, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45306, -7.19647, 0)
 mesh = SubResource("PlaneMesh_86ljf")
 
 [node name="Drowsy" type="MeshInstance3D" parent="."]
