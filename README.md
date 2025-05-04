@@ -10,10 +10,10 @@
 ## Work division
 | Task                                                       | Who             | Status |
 |------------------------------------------------------------|-----------------|--------|
-| Level design                                               | Arf             |  [ ]   |
-| Assets                                                     | Slushee         |  [ ]   |
-| Godot stuff                                                | Fay (& Slushee) |  [ ]   |
-| Gemini integration (Tips + Success/encouragement messages) | Emma            |  [ ]   |
+| Level design                                               | Arf             |  ✅   |
+| Assets                                                     | Slushee         |  ✅   |
+| Godot stuff                                                | Fay (& Slushee) |  ✅   |
+| Gemini integration (Tips + Success/encouragement messages) | Emma            |  ✅   |
 
 ## QTEs spec
 
