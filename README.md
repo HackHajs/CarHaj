@@ -23,3 +23,6 @@
  - option1,option2
  - \<correct option 0 indexed>
  - \<timeeout (secs)>
+
+## How to run
+If you want to run this game, please note that the attached build contains an expired Gemini cache and API key. If you want to play, you will need to generate a new Gemini API key, and cache the manual with the [script](./Scripts/Gemini/Make_Cache/uploadCache.py). You will need to make a .env before, with GEMINI_KEY defined as the Gemini API secret. This secret should also be defined in [environment.gd](./Scripts/environment.gd.example).
